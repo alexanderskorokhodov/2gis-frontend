@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="bun dev" type="BunRunConfiguration">
+    <option name="program" value="vite.config.ts" />
+    <option name="runtimeParameters">
+      <list>
+        <option value="run" />
+        <option value="dev" />
+      </list>
+    </option>
+    <option name="workingDirectory" value="$PROJECT_DIR$" />
+    <method v="2" />
+  </configuration>
+</component>
