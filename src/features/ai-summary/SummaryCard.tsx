@@ -47,7 +47,7 @@ export default function SummaryCard({
 	console.log(data)
 
 	return (
-		<div className="w-full p-[10px] pb-0 text-[15px] text-gray-900">
+		<div className="w-full px-[10px] pb-0 text-[15px] text-gray-900">
 			{/* Cover */ }
 			{
 				data !== undefined ? [<div className="relative rounded-[10px] overflow-hidden">
