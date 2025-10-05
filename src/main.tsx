@@ -1,12 +1,14 @@
-
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import '@/styles.css';
+import React from "react"
+import ReactDOM from "react-dom/client"
 import { RouterProvider } from 'react-router-dom'
-import './styles.css'
-import { router } from './app/router'
+import { router } from '@/app/router'
+import { applyFontVars } from '@shared/theme/fonts';
+
+applyFontVars();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+	<React.StrictMode>
+		<RouterProvider router={ router }/>
+	</React.StrictMode>
 )

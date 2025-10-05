@@ -10,9 +10,9 @@ export function TagBadge({ label, className = "", ...rest }: Props) {
 		<div
 			className={
 				"inline-flex w-fit items-center justify-center " +
-				"rounded-[6px] bg-[#FFF4E4] text-[#EA8D0B] " +
+				"rounded-[6px] bg-[#22AC1F26] text-[#26AE21] " +
 				"px-[10px] py-[4px] " +
-				"text-[10px] leading-[1.223] font-medium font-[var(--main-font)] " +
+				"text-[10px] leading-[1.223] font-medium primary-font " +
 				className
 			}
 			{...rest}

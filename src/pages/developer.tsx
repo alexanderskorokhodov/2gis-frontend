@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useUnit } from 'effector-react'
 import { developerRequested, $developer } from '@entities/developer/model'
-import { DeveloperHeader } from '@entities/developer/ui'
+// import { DeveloperHeader } from '@entities/developer/ui'
 import { AISummaryCard } from '@features/ai-summary/ui'
 
 export function DeveloperPage({ variant }: { variant?: 'tma' }) {
@@ -18,7 +18,7 @@ export function DeveloperPage({ variant }: { variant?: 'tma' }) {
 
   return (
     <div className={variant === 'tma' ? 'space-y-3' : 'space-y-6'}>
-      <DeveloperHeader dev={dev} />
+      {/*<DeveloperHeader dev={dev} />*/}
       <AISummaryCard entityType="developer" entityId={dev.id} />
       <div className="card p-4">
         <div className="font-semibold">Жилые комплексы</div>

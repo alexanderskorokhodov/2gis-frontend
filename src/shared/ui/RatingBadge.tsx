@@ -1,6 +1,6 @@
 // src/shared/ui/RatingBadge.tsx
 import { HTMLAttributes } from "react"
-import { StarSolidIcon } from "@shared/ui/icons"
+import { StarSolidIcon } from "@shared/assets/icons"
 
 type Props = {
 	value: number | string

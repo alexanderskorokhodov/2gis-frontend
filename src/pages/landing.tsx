@@ -1,29 +1,25 @@
-
-import { useEffect } from 'react'
-import { useUnit } from 'effector-react'
-import { popularRequested } from '@entities/developer/model'
-import { $popular } from '@entities/developer/model'
-import { DeveloperCard } from '@entities/developer/ui'
-import { SearchBar } from '@widgets/SearchBar'
+import { useEffect } from 'react';
+import { useUnit } from 'effector-react';
+import { popularRequested, $popular } from '@entities/developer/model';
+import { Hero } from '@/widgets/Hero/Hero';
+import { DevelopersCarousel } from "@widgets/developers/Carousel";
 
 export function LandingPage() {
-  const popular = useUnit($popular)
+	const popular = useUnit($popular);
 
-  useEffect(() => { popularRequested() }, [])
+	useEffect(() => {
+		popularRequested();
+	}, []);
 
-  return (
-    <div className="space-y-6">
-      <section className="space-y-4">
-        <h1 className="text-3xl font-semibold">Проверьте репутацию застройщика за 2 минуты</h1>
-        <SearchBar />
-      </section>
+	return (
+		<div className="gap-[32px]">
+			<Hero/>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Популярные застройщики</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {popular.map(dev => <DeveloperCard key={dev.id} dev={dev} />)}
-        </div>
-      </section>
-    </div>
-  )
+			<DevelopersCarousel heading={"Популярные застройщики"} className={"px-[20px]"} items={ popular } onOpenAll={ () => {
+			} }/>
+
+			<DevelopersCarousel heading={"ЖК, которые часто выбирают"} className={"px-[20px]"} items={ popular } onOpenAll={ () => {
+			} }/>
+		</div>
+	);
 }
