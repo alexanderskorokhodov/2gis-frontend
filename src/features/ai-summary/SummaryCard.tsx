@@ -116,9 +116,9 @@ export default function SummaryCard({
 								</>
 							) : null }
 							<div className="mt-6 text-[22px]">Застройщик { data.developer }</div>
-							<DevelopersCarousel heading={ "Другие проекты застройщика" } className={ "px-0px" } items={ popular }
-							                    onOpenAll={ () => {
-							                    } }/>
+							{/*<DevelopersCarousel heading={ "Другие проекты застройщика" } className={ "px-0px" } items={ popular }*/}
+							{/*                    onOpenAll={ () => {*/}
+							{/*                    } }/>*/}
 						</div>]
 					: <></> }
 		</div>
