@@ -14,5 +14,16 @@ export default defineConfig({
 			'@pages': path.resolve(__dirname, 'src/pages'),
 			'@shared': path.resolve(__dirname, 'src/shared'),
 		}
+	},
+	server: {
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3000', // или порт, где крутится твой backend/serverless emulator
+				changeOrigin: true,
+			},
+		},
+	},
+	build: {
+		sourcemap: true,
 	}
 })

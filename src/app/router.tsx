@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import { Suspense, lazy, JSX } from 'react'
 import { AppLayout } from './shells/AppLayout'
 
@@ -19,11 +19,6 @@ const ComparePage = lazy(() =>
 	import('@pages/compare').then(m => ({default: m.ComparePage}))
 )
 
-// TMA shell as lazy too (named export)
-const TMAShell = lazy(() =>
-	import('@pages/tma/shell').then(m => ({default: m.TMAShell}))
-)
-
 const ObjectWidgetPage = lazy(() =>
 	import('@pages/ObjectWidgetPage').then(m => ({default: m.default}))
 )
@@ -32,7 +27,7 @@ const withSuspense = (node: JSX.Element) => (
 	<Suspense fallback={ <div className="p-4">Загрузка…</div> }>{ node }</Suspense>
 )
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
 	{
 		element: <AppLayout/>,
 		children: [
@@ -42,16 +37,6 @@ export const router = createBrowserRouter([
 			{path: '/complex/:id', element: withSuspense(<ComplexPage/>)},
 			{path: '/compare', element: withSuspense(<ComparePage/>)},
 			{ path: "/widget/object/:slug", element: <ObjectWidgetPage /> },
-		]
-	},
-	{
-		path: '/tma',
-		element: withSuspense(<TMAShell/>),
-		children: [
-			{path: 'search', element: withSuspense(<SearchPage variant="tma"/>)},
-			{path: 'developer/:id', element: withSuspense(<DeveloperPage variant="tma"/>)},
-			{path: 'complex/:id', element: withSuspense(<ComplexPage variant="tma"/>)},
-			{path: 'compare', element: withSuspense(<ComparePage variant="tma"/>)},
 		]
 	}
 ])
